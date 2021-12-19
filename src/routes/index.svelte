@@ -2,6 +2,17 @@
     let location="";
     let temperature="";
     let description="";
+
+    async function getWeather() {
+        fetch('https://goweather.herokuapp.com/weather/' + location)
+        .then((response) => response.json())
+        .then((data) => {
+  	temperature = data.temperature; // Path for temperature
+  	description = data.description; // Path for description
+	});
+
+}
+
 </script>
 <h1>Welcome to SvelteKit</h1>
 <form on:submit|preventDefault={getWeather}>
@@ -9,3 +20,5 @@
     <input id="location" bind:value={location} type="text" />
     <button type="submit">Check</button>
 </form>
+<p>Temperature: {weatherTemperature}</p>
+<p>Description: {weatherDescription}</p>
