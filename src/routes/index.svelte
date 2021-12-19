@@ -20,5 +20,5 @@
     <input id="location" bind:value={location} type="text" />
     <button type="submit">Check</button>
 </form>
-<p>Temperature: {weatherTemperature}</p>
-<p>Description: {weatherDescription}</p>
+<p>Temperature: {temperature}</p>
+<p>Description: {description}</p>
